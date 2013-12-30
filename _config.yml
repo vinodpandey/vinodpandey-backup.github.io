@@ -1,0 +1,20 @@
+url: http://vinodpandey.com
+title: Vinod Pandey
+subtitle: Random Thoughts of a Technology Enthusiast
+author: Vinod Pandey
+markdown: redcarpet
+pygments: true
+
+date_format: "ordinal"
+simple_search: http://google.com/search
+permalink: /:title/
+
+google_analytics_tracking_id: UA-1442827-7
+
+subscribe_rss: /atom.xml
+subscribe_email:
+
+
+
+
+
