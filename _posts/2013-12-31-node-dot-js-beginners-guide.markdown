@@ -41,3 +41,10 @@ Server running at http://127.0.0.1:1337/
 ```
 
 Access http://127.0.0.1:1337/ and you are greeted with 'Hello World'  
+
+## GoogleTechTalk from Ryan Dahl (Node.js creator)
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/F6k8lTrAE2g?rel=0" frameborder="0"> </iframe>
+
+
+
