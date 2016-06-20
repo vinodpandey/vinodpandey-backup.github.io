@@ -65,8 +65,8 @@ System Preferences > MySQL
 
 #### set command shortcut
 ````sh
-sudo ln -sfn /usr/local/mysql/bin/mysql /usr/bin/mysql
-sudo ln -sfn /usr/local/mysql/bin/mysql_config /usr/bin/mysql_config
+sudo ln -sfn /usr/local/mysql/bin/mysql /usr/local/bin/mysql
+sudo ln -sfn /usr/local/mysql/bin/mysql_config /usr/local/bin/mysql_config
 ````
 
 #### changing mysql passwod
