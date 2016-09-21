@@ -67,6 +67,7 @@ System Preferences > MySQL
 ````sh
 sudo ln -sfn /usr/local/mysql/bin/mysql /usr/local/bin/mysql
 sudo ln -sfn /usr/local/mysql/bin/mysql_config /usr/local/bin/mysql_config
+sudo ln -sfn /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/local/lib/libmysqlclient.18.dylib
 ````
 
 #### changing mysql passwod
