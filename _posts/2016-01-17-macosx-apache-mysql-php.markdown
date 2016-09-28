@@ -33,6 +33,9 @@ sudo vim /etc/apache2/httpd.conf
 # restart apache
 sudo apachectl restart
 # access http://localhost:8888/
+
+# verifying configuration
+apachectl configtest
 ````
 
 ## PHP
