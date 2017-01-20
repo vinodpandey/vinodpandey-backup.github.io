@@ -6,7 +6,7 @@ comments: true
 sharing: true
 footer: true
 ---
-##About Me
+## About Me
 
 I'm Vinod Pandey. I live in Delhi, India.  I am a computer programmer and consider myself a technology enthusiast. 
 

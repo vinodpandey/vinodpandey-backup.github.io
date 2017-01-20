@@ -2,20 +2,4 @@
 layout: default
 ---
 
-<div>
-<article role="article">
-  
-  {{ content }}
-  {% unless page.footer == false %}
-    <footer>
-      {% if page.date or page.author %}<p class="meta">
-        
-      </p>{% endif %}
-      {% unless page.sharing == false %}
-      
-      {% endunless %}
-    </footer>
-  {% endunless %}
-</article>
-
-</div>
+{{ content }}

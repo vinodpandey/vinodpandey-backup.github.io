@@ -6,7 +6,7 @@ comments: true
 sharing: true
 footer: true
 ---
-##Disclaimer
+## Disclaimer
 
 This is my personal blog. The views or opinions expressed here are mine alone and not those of my employer.
 
