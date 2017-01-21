@@ -12,17 +12,12 @@ title: Technology Enthusiast | Vinod Pandey
     {% endfor %}
   </ul>
 
-  {% assign sections = "documentation" | split: ", " %}
-  {% for section in sections %}
-    <h1>{{ section | capitalize }}</h1>
-    <ul class="posts">
-    {% for item in site.pages reverse %}
-        {% if item.url contains section/ %}
-          <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></li>
-        {% endif %}
-    {% endfor %}
-    </ul>
-  {% endfor %}
+  <h1>Documentation</h1>
+  <ul class="posts">
+    {% directory path: documentation %}
+      <li><a href="{{ file.url }}/">{{ file.name | capitalize }}</a></li>
+    {% enddirectory %}
+  </ul>
 
 
 </div>
