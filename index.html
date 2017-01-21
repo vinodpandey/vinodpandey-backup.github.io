@@ -12,14 +12,16 @@ title: Technology Enthusiast | Vinod Pandey
     {% endfor %}
   </ul>
 
-  {% assign sections = "documentation, tutorials" | split: ", " %}
+  {% assign sections = "documentation" | split: ", " %}
   {% for section in sections %}
     <h1>{{ section | capitalize }}</h1>
+    <ul class="posts">
     {% for item in site.pages reverse %}
         {% if item.url contains section/ %}
-          <a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a>
+          <li><a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></li>
         {% endif %}
     {% endfor %}
+    </ul>
   {% endfor %}
 
 

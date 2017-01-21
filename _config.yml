@@ -6,6 +6,7 @@ baseurl:      ""
 # Gems
 gems:
   - jekyll-paginate
+  - jekyll-redirect-from
 
 #Others
 markdown: kramdown
