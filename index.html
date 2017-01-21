@@ -15,11 +15,14 @@ title: Technology Enthusiast | Vinod Pandey
 
   {% assign sections = "documentation" | split: ", " %}
   {% for section in sections %}
+    {% assign section_path = section | append: '/index.md' %}
     <h1>{{ section | capitalize }}</h1>
     <ul class="posts">
       {% for item in site.pages %}
         {% if item.url contains section/ and item.path contains "index.md" %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% unless item.path == section_path %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endunless %}
         {% endif %}
       {% endfor %}
     </ul>
