@@ -7,9 +7,9 @@ layout: default
 {% assign section_path = page.section | append: '/index.md' %}
 <ul class="posts">
   {% for item in site.pages %}
-    {% if item.url contains page.section/ and item.path contains "index.md" %}
+    {% if item.url contains page.section/ %}
         {% unless item.path == section_path %}
-            <li><a href="{{ item.url }}">{{ item.title }}</a><br>{{ item.description }}</li>
+            <li><a href="{{ item.url }}">{{ item.title }}</a></li>
         {% endunless %}
     {% endif %}
   {% endfor %}
