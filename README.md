@@ -1,3 +1,5 @@
+![Build Status](https://travis-ci.org/vinodpandey/vinodpandey.github.io.svg?branch=master)
+
 #Documentation
 
 ####Installing required dependencies
