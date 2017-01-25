@@ -43,4 +43,19 @@ title: Technology Enthusiast | Vinod Pandey
     </ul>
   {% endfor %}
 
+  {% assign sections = "imposter-guide" | split: ", " %}
+  {% for section in sections %}
+    {% assign section_path = section | append: '/index.md' %}
+    <h1>{{ section | capitalize }}</h1>
+    <ul class="posts">
+      {% for item in site.pages %}
+        {% if item.url contains section/ %}
+            {% unless item.path == section_path %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
 </div>
