@@ -31,4 +31,5 @@ src="https://www.youtube.com/embed/vAb-2d1vcg8?rel=0" frameborder="0" allowfulls
 ## Resources 
 * [Official Documentation](https://angular.io/docs/ts/latest/guide/)
 * [Style Guide](https://angular.io/docs/ts/latest/guide/style-guide.html)
+* [Angular 1 to Angular 2 quick reference](https://angular.io/docs/ts/latest/cookbook/ajs-quick-reference.html)
 
