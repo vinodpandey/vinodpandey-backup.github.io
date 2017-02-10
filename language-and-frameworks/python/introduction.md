@@ -11,6 +11,8 @@ https://www.python.org/downloads/windows/
 ```
 
 ## Google Python Class
+Video tutorial
+
 ### Google Python Class Day 1 Part 1
 
 <iframe width="560" height="315" 
