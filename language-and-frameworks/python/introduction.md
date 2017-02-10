@@ -11,7 +11,7 @@ https://www.python.org/downloads/windows/
 ```
 
 ## Google Python Class
-Video tutorial
+Videos embedded below.
 
 ### Google Python Class Day 1 Part 1
 
