@@ -18,6 +18,30 @@ Videos embedded below.
 <iframe width="560" height="315" 
 src="https://www.youtube.com/embed/tKTZoB2Vjuk?rel=0" frameborder="0" allowfullscreen></iframe>
 
+##### Notes
+* scripting language with no heavy type system
+* interpreted language
+* case sensitive
+* python helloworld example using hello.py
+* using modules in python
+* printing command line arguments using sys module
+* researching what a module is and what's in it (using google :))
+* identifying symbol errors in code
+* python example - printing name argument
+* indentation for code formatting
+* python example - using if else
+* python example - logical connectives
+* no compile time checks. Everything checked at run time only.
+* strings are immutable
+* built-in string methods
+* seized print-up syntax
+* indexing in python and colon syntax for string slicing
+
+##### Exercises:
+[https://developers.google.com/edu/python/exercises/basic](https://developers.google.com/edu/python/exercises/basic)
+download google-python-exercises.zip  
+
+
 ### Google Python Class Day 1 Part 2
 <iframe width="560" height="315" 
 src="https://www.youtube.com/embed/EPYupizJYQI?rel=0" frameborder="0" allowfullscreen></iframe>
