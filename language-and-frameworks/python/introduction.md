@@ -41,10 +41,51 @@ src="https://www.youtube.com/embed/tKTZoB2Vjuk?rel=0" frameborder="0" allowfulls
 [https://developers.google.com/edu/python/exercises/basic](https://developers.google.com/edu/python/exercises/basic)
 download google-python-exercises.zip  
 
+##### More Exercises:
+* Program which takes any integer as input and prints weather number is even or odd.
+* Program to print below string.
+
+```
+    *
+    * *
+    * * *
+    * * * *
+```
+
+* Program to print below string.
+
+```
+                *
+              * * *
+            * * * * *	
+          * * * * * * *
+```
+
+* Program to print below fibonacci series.
+
+```
+1 1 2 3 4 7 11
+```
+
+* Program to calculate area of a rectangle.
+
+
 
 ### Google Python Class Day 1 Part 2
 <iframe width="560" height="315" 
 src="https://www.youtube.com/embed/EPYupizJYQI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+##### Notes:
+* List e.g. [1, 2, 3]
+* Difference between b = a and b = a[:] where a is a list
+* Slicing a list - a[1:3] a[:-1]
+* Looping over a list - for item in list:
+* Checking if a value is in list - value in list
+* Adding items to list - list.append
+* Removing items from list - list.pop
+* Sorting a list - sorted, reverse paramter
+* Custom sorting using key function - sorted(a, key=len)
+
 
 ### Google Python Class Day 1 Part 3
 <iframe width="560" height="315" 
