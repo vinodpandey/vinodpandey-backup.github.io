@@ -771,6 +771,38 @@ sudo vim /etc/sensu/conf.d/metrics/website.json
  }
 
 
+
+sensu-install -P sensu-plugins-mysql
+
+/etc/sensu/conf.d/client.json
+{
+  "client": {
+    
+
+    "mysql": {
+      "hostname": "localhost",
+      "port": 3306,
+      "username": "user",
+      "password": "password"
+    }
+  }
+}
+
+sudo vim /etc/sensu/conf.d/metrics/mysql.json
+
+{
+   "checks": {
+     "metrics-mysql": {
+       "type": "metric",
+       "command": "metrics-mysql-graphite.rb -u :::mysql.username::: -p :::mysql.password::: -h :::mysql.hostname::: -S /var/lib/mysql/mysql.sock",
+       "interval": 5,
+       "subscribers": ["mysql"],
+       "handlers": ["graphite_tcp"]
+     }
+   }
+ }
+
+
 ```
 
 Ref:
