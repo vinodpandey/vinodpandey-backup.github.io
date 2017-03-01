@@ -108,7 +108,6 @@ commit 2a4e0b3cb68361f1b22e0152ccc9c1ac8fedc4ca
 Author: Vinod Pandey
 Date:   Mon Feb 27 12:58:52 2017 +0530
 commit2
-
 commit 31e2be090dac63d527503f6ab34b263774978fa0
 Author: Vinod Pandey
 Date:   Mon Feb 27 12:58:07 2017 +0530
@@ -116,10 +115,9 @@ commit1
     
 # for merging last 2 commits in single commit in remote repository    
 git rebase -i HEAD~2
-
 # replace pick with squash for second line
-git push origin myfeature --force
 
+git push origin myfeature --force
 
 git log
 commit f9eb0d99a4d262bbe62a4b545ed5614b22cdc70b
