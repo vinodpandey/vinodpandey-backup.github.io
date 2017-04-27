@@ -40,7 +40,7 @@ sudo sysctl -w fs.file-max=100000
 sudo chkconfig --add redis_6379
 ```
 
-## PostgresSQL
+## PostgreSQL
 ```
 rpm -Uvh http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
 
