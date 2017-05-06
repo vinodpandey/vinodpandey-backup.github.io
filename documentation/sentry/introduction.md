@@ -6,75 +6,15 @@ title: Sentry
 
 # Pre-requisites
 ## Redis
-```
-cd ~
-sudo yum install -y tcl
-wget http://download.redis.io/releases/redis-3.2.6.tar.gz
-tar xzf redis-3.2.6.tar.gz
-cd redis-3.2.6
-make test
-sudo make install
-cd utils
-
-# redis executable path - asked in below script - /usr/local/bin/redis-server
-sudo ./install_server.sh 
-
-# starting redis
-sudo service redis_6379 start
-
-# redis info
-redis-cli info
-
-# testing
-redis-cli ping
-PONG
-
-## configuring redis
-
-sudo vim /etc/sysctl.conf
-vm.overcommit_memory=1
-sudo sysctl vm.overcommit_memory=1
-sudo sysctl -w fs.file-max=100000
-
-# start redis on system restart
-sudo chkconfig --add redis_6379
-```
+* [Redis installation guide](/documentation/redis/)
 
 ## PostgreSQL
-```
-rpm -Uvh http://yum.postgresql.org/9.5/redhat/rhel-6-x86_64/pgdg-redhat95-9.5-2.noarch.rpm
-
-yum install postgresql95-server postgresql95 libpqxx-devel postgresql-devel
-
-# initialize data
-sudo service postgresql-9.5 initdb
-
-# starting server
-service  postgresql-9.5 start
-
-# autostart on server restart
-chkconfig postgresql-9.5 on
-
-# psql setup
-mv /usr/bin/psql /usr/bin/psql-bk
-ln -sfn /usr/pgsql-9.5/bin/psql /usr/bin/psql
-
-# commandline postgres
-sudo -u postgres psql
-postgres=#
-
-
-sudo vim /var/lib/pgsql/9.5/data/pg_hba.conf
-change peer and ident to md5
-
-service  postgresql-9.5 start
-
-```
+* [PostgreSQL installation guide](/documentation/postgresql/)
 
 # Installing via Python
 ## Dependencies
 ```
-sudo yum install python-setuptools python-devel libxslt-devel gcc gcc-c++ libffi-devel libjpeg-devel libxml2-devel libxslt-devel libyaml-devel 
+sudo yum install python-setuptools python-devel libxslt-devel gcc gcc-c++ libffi-devel libjpeg-devel libxml2-devel libxslt-devel libyaml-devel
 ```
 
 ## Installation
@@ -145,7 +85,5 @@ stderr_logfile=/var/log/gunicorn/sentry-cron-err.log
 ```
 
 
-## Old data cleanup 
+## Old data cleanup
 sentry cleanup --days=30
-
-

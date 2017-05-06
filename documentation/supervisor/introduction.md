@@ -15,14 +15,21 @@ sudo mkdir -p /var/log/gunicorn/
 
 ## Config file
 ```sh
-echo_supervisord_conf > supervisord.conf
+/usr/local/bin/echo_supervisord_conf > supervisord.conf
 sudo mv supervisord.conf /etc/
+
+uncomment/add below line in supervisord.conf
+[include]
+files = /etc/supervisor/conf.d/*.conf
+
+mkdir -p /etc/supervisor/conf.d/
+place all individual *.conf files in above directory
 ```
 
-## Managing 
+## Managing
 ```sh
 # start  
-sudo /usr/bin/supervisord -c /etc/supervisord.conf 
+sudo /usr/bin/supervisord -c /etc/supervisord.conf
 
 #stop
 sudo supervisorctl shutdown

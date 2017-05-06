@@ -28,7 +28,7 @@ sudo ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
 ### semanage for managing permissions with selinux
 ```
 sudo yum -y install policycoreutils-python setroubleshoot-server
-# sudo sealert -a /var/log/audit/audit.log 
+# sudo sealert -a /var/log/audit/audit.log
 ```
 
 ### enable remote connections on port 80 for httpd
@@ -65,10 +65,10 @@ sudo yum -y install httpd httpd-devel mod_ssl openssl
 
 cd ~
 # Self signed SSL certificate setup
-# Generate private key 
-openssl genrsa -out ca.key 2048 
+# Generate private key
+openssl genrsa -out ca.key 2048
 
-# Generate CSR 
+# Generate CSR
 openssl req -new -key ca.key -out ca.csr
 
 # Generate Self Signed Key
@@ -108,7 +108,7 @@ Listen 8080
 sudo service httpd restart
 
 if error in SSL vhost
-sudo vim /etc/httpd/conf/httpd.conf 
+sudo vim /etc/httpd/conf/httpd.conf
 Listen 443 http
 
 # mod_wsgi installation
@@ -147,7 +147,7 @@ PYTHONPATH=/opt/graphite/webapp django-admin.py migrate --settings=graphite.sett
 PYTHONPATH=/opt/graphite/webapp django-admin.py collectstatic --noinput --settings=graphite.settings
 deactivate
 # exit su shell
-exit 
+exit
 
 sudo chown -R apache:apache /opt/graphite/storage/
 sudo chown -R apache:apache /opt/graphite/static/
@@ -185,7 +185,7 @@ sudo service httpd restart
 logs
 /opt/graphite/storage/log/
 
-# checking access of local server 
+# checking access of local server
 /etc/hosts
 127.0.0.1 graphite
 
@@ -208,7 +208,7 @@ sudo cp /opt/graphite/conf/storage-aggregation.conf.example /opt/graphite/conf/s
 sudo cp /opt/graphite/conf/relay-rules.conf.example /opt/graphite/conf/relay-rules.conf
 sudo cp /opt/graphite/conf/aggregation-rules.conf.example /opt/graphite/conf/aggregation-rules.conf
 sudo cp /opt/graphite/conf/rewrite-rules.conf.example /opt/graphite/conf/rewrite-rules.conf
-sudo cp /opt/graphite/conf/blacklist.conf.example  /opt/graphite/conf/blacklist.conf 
+sudo cp /opt/graphite/conf/blacklist.conf.example  /opt/graphite/conf/blacklist.conf
 sudo cp /opt/graphite/conf/whitelist.conf.example /opt/graphite/conf/whitelist.conf
 
 sudo cp /opt/graphite/examples/init.d/carbon-* /etc/init.d/
@@ -246,7 +246,7 @@ sudo /sbin/chkconfig --add grafana-server
 
 sudo service grafana-server start
 
-http://localhost:3000 
+http://localhost:3000
 admin:admin
 
 # https virtualhost
@@ -275,7 +275,7 @@ Success message should be displayed
 Admin > Profile - Information, Change Password
 
 # disable user signups
-sudo vim /etc/grafana/grafana.ini 
+sudo vim /etc/grafana/grafana.ini
 [users]
 # disable user signup / registration
 allow_sign_up = false
@@ -285,45 +285,10 @@ sudo service grafana-server restart
 ```
 
 # sensu server with uchiwa
-```
-## redis (installing latest version as redis 2.4 has a hard-corded limit of handling multiple connections)
-# update maximum number of file handles for a single process allowed to open from 1024 to 65535 
-# https://sensuapp.org/docs/latest/installation/install-redis-on-rhel-centos.html
-cd ~
-sudo yum install -y tcl
-wget http://download.redis.io/releases/redis-3.2.6.tar.gz
-tar xzf redis-3.2.6.tar.gz
-cd redis-3.2.6
-make test
-sudo make install
-cd utils
-# redis executable path - asked in below script - /usr/local/bin/redis-server
-sudo ./install_server.sh 
+## redis
+* [Redis installation guide](/documentation/redis/)
 
-# starting redis
-sudo service redis_6379 start
-
-# redis info
-redis-cli info
-
-# testing
-redis-cli ping
-PONG
-
-## configuring redis
-
-sudo vim /etc/sysctl.conf
-vm.overcommit_memory=1
-sudo sysctl vm.overcommit_memory=1
-sudo sysctl -w fs.file-max=100000
-
-# ulimit increase in first step above
-
-# start redis on system restart
-sudo chkconfig --add redis_6379
-```
-
-## rabbit mq 
+## rabbit mq
 ```
 # follow installation steps at below url (erlang and rabbitmq server only, without management plugin)
 https://github.com/vinodpandey/blog/tree/master/documentation/rabbitmq
@@ -345,7 +310,7 @@ sudo rabbitmqctl status | grep -A 4 file_descriptors
 
 Ref: https://sensuapp.org/docs/latest/installation/install-rabbitmq-on-rhel-centos.html
 
-## RabbitMQ SSL configuration for sensu 
+## RabbitMQ SSL configuration for sensu
 sudo yum -y install openssl
 cd ~
 wget http://sensuapp.org/docs/0.25/files/sensu_ssl_tool.tar
@@ -359,7 +324,7 @@ sudo cp sensu_ca/cacert.pem /etc/rabbitmq/ssl/
 sudo cp server/cert.pem /etc/rabbitmq/ssl/
 sudo cp server/key.pem /etc/rabbitmq/ssl/
 
-sudo service rabbitmq-server start 
+sudo service rabbitmq-server start
 
 sudo vim /etc/rabbitmq/rabbitmq.config
 [
@@ -569,7 +534,7 @@ enabled=1' | sudo tee /etc/yum.repos.d/sensu.repo
 
 sudo yum -y install sensu
 
-set safe_mode as true to check local definition also 
+set safe_mode as true to check local definition also
 
 sudo vim /etc/sensu/conf.d/client.json
 {
@@ -644,7 +609,7 @@ sudo service sensu-client start
 sudo service sensu-client stop
 
 # check logs for issues
-sudo tail -f /var/log/sensu/sensu-client.log 
+sudo tail -f /var/log/sensu/sensu-client.log
 ```
 
 ## Checks and metrics (application wise grouping)
@@ -740,8 +705,8 @@ sudo vim /etc/sensu/conf.d/metrics/varnish.json
      }
    }
  }
- 
- 
+
+
 #   varnishstat requires root permissions.  When running this script as a non-root
 #   user such as sensu, ensure it is run with sudo.
 #
@@ -777,7 +742,7 @@ sensu-install -P sensu-plugins-mysql
 /etc/sensu/conf.d/client.json
 {
   "client": {
-    
+
 
     "mysql": {
       "hostname": "localhost",
@@ -806,7 +771,7 @@ sudo vim /etc/sensu/conf.d/metrics/mysql.json
 ```
 
 Ref:
- 
+
 * [http://blog.estl.moe/2016/08/16/pilot-your-infra-like-a-boss.html](http://blog.estl.moe/2016/08/16/pilot-your-infra-like-a-boss.html)  
 * [http://graphite.readthedocs.io/en/latest/install-virtualenv.html](http://graphite.readthedocs.io/en/latest/install-virtualenv.html)   
 * [https://anomaly.io/install-graphite-centos/](https://anomaly.io/install-graphite-centos/)  
@@ -814,4 +779,3 @@ Ref:
 * [http://blog.airwoot.com/post/137688775104/monitoring-using-sensu-statsd-graphite-grafana](http://blog.airwoot.com/post/137688775104/monitoring-using-sensu-statsd-graphite-grafana)  
 * [https://ianunruh.com/2014/05/monitor-everything-part-4.html](https://ianunruh.com/2014/05/monitor-everything-part-4.html)    
 * [https://wiki.centos.org/HowTos/Https](https://wiki.centos.org/HowTos/Https)  
-
