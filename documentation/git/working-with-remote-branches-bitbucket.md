@@ -136,7 +136,7 @@ message
 
 ```
 Merging remote commits to single commit (when we have already merged develop branch multiple times on feature branch).
-<feature-squashed-branch> is the new temporary branch that we are creating for squashing all commit (including merges). <feature-branch> is the branch which contains multiple commits and merge histroy.
+{feature-squashed-branch} is the new temporary branch that we are creating for squashing all commit (including merges). {feature-branch} is the branch which contains multiple commits and merge histroy.
 
 ```
 
@@ -145,13 +145,13 @@ git checkout develop
 git pull --rebase
 
 # create a new branch that contains latest changes from develop
-git checkout -b <feature-squashed-branch> develop
-git merge --squash <feature-branch>
+git checkout -b {feature-squashed-branch} develop
+git merge --squash {feature-branch}
 git add .
 git commit -m "commit message"
-git push origin <feature-squashed-branch>
+git push origin {feature-squashed-branch}
 
-# now create PR from <feature-squashed-branch> which will contain all commits/merges as single commit
+# now create PR from {feature-squashed-branch} which will contain all commits/merges as single commit
 
 ```
 
