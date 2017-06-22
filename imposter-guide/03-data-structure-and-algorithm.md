@@ -8,3 +8,5 @@ title: Data Structure & Algorithm
 
 # Visualising data structures and algorithms through animation 
 [https://visualgo.net](https://visualgo.net)
+[https://www.cs.usfca.edu/~galles/visualization/Algorithms.html](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html)
+[https://www.toptal.com/developers/sorting-algorithms/](https://www.toptal.com/developers/sorting-algorithms/)
