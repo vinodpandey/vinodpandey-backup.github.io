@@ -35,8 +35,10 @@ Auto-merging templates/learning/account/login_email.html
 CONFLICT (content): Merge conflict in templates/learning/account/login_email.html
 ```
 
-#### Manually resolve conflict in files
+#### Manually resolve conflict in files or user PyCharm editor to resolve conflicts using GUI
 ```sh
+# Use PyCharm editor to resolve conflicts using GUI
+
 # Open file in vim or Notepad++
 # <<<<<< and >>>>> shows the confilcts for particular line
 # HEAD is current branch
@@ -64,6 +66,7 @@ above CONFLICT after fixing:
 
 #### Commit and push changed files
 ```sh
+
 git add templates/learning/account/login_email.html
 
 git commit -m 'resolved conflicts'
