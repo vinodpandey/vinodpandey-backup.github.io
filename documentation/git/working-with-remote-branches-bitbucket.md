@@ -29,6 +29,9 @@ git fetch && git checkout myfeature
 
 #### git pro tips
 ```
+# view logs as one liner
+git log --oneline
+
 # show check-ins in current branch (compared to develop)
 git cherry -v develop
 # with log
