@@ -26,6 +26,16 @@ git fetch && git checkout myfeature
 
 
 ```
+
+#### git pro tips
+```
+# show check-ins in current branch (compared to develop)
+git cherry -v develop
+# with log
+git log develop..
+
+```
+
                     
 #### Commiting changes to local repository
 Amend all changes to a single commit.
