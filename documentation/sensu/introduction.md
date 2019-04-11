@@ -695,16 +695,19 @@ sudo vim /etc/sensu/conf.d/metrics/memcached.json
 sudo sensu-install -P sensu-plugins-varnish
 /opt/sensu/embedded/bin/metrics-varnish.rb
 sudo vim /etc/sensu/conf.d/metrics/varnish.json
- {
+ 
+{
+   "checks": {
      "metrics-varnish": {
        "type": "metric",
-       "command": "sudo /opt/sensu/embedded/bin/metrics-varnish.rb",
+       "command": "metrics-varnish.rb",
        "interval": 5,
        "subscribers": ["varnish"],
        "handlers": ["graphite_tcp"]
      }
    }
  }
+
 
 
 #   varnishstat requires root permissions.  When running this script as a non-root
